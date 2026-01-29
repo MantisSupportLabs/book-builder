@@ -75,10 +75,11 @@ export default async function DashboardPage() {
   const { data: { user } } = await supabase.auth.getUser();
 
   if (!user) {
-    redirect('/sign-in');
+    // TESTING MODE: Comment out redirect
+    // redirect('/sign-in');
   }
 
-  const books = await getBooks(user.id);
+  const books = await getBooks(user?.id || '00000000-0000-0000-0000-000000000000');
 
   return (
     <div className="min-h-screen bg-background">
@@ -95,7 +96,7 @@ export default async function DashboardPage() {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <User className="w-4 h-4" />
-              <span className="hidden sm:inline">{user.email}</span>
+              <span className="hidden sm:inline">{user?.email || 'Test Mode'}</span>
             </div>
             <form action="/auth/signout" method="post">
               <Button variant="ghost" size="sm" type="submit">

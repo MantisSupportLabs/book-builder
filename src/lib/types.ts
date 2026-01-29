@@ -316,6 +316,20 @@ export const VOICE_TRAIT_LABELS: Record<keyof VoiceTraits, string> = {
     minimalist: 'Minimalist',
 };
 
+// Convenience exports for genres
+export const FICTION_GENRES = GENRES.fiction;
+export const NONFICTION_GENRES = GENRES.nonfiction;
+
+// Audience options
+export const AUDIENCE_OPTIONS: { value: string; label: string }[] = [
+    { value: 'children', label: 'Children' },
+    { value: 'middle-grade', label: 'Middle Grade' },
+    { value: 'young-adult', label: 'Young Adult' },
+    { value: 'new-adult', label: 'New Adult' },
+    { value: 'adult', label: 'Adult' },
+    { value: 'general', label: 'General Audience' },
+];
+
 // ================================
 // AI Actions
 // ================================

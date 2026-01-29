@@ -105,16 +105,14 @@ export default function NewBookPage() {
 
         try {
             const { data: { user } } = await supabase.auth.getUser();
-            if (!user) {
-                router.push('/sign-in');
-                return;
-            }
+            // TESTING MODE: Use test user UUID if not authenticated
+            const userId = user?.id || '00000000-0000-0000-0000-000000000000';
 
             // Create the book
             const { data: book, error: bookError } = await supabase
                 .from('books')
                 .insert({
-                    user_id: user.id,
+                    user_id: userId,
                     title: data.title,
                     is_fiction: data.is_fiction,
                     genre: data.genre || null,

@@ -46,6 +46,8 @@ export async function updateSession(request: NextRequest) {
         request.nextUrl.pathname.startsWith(path)
     );
 
+    // TESTING MODE: Auth checks disabled - uncomment to re-enable
+    /*
     if (isProtectedPath && !user) {
         // Redirect to sign-in if not authenticated
         const url = request.nextUrl.clone();
@@ -59,6 +61,7 @@ export async function updateSession(request: NextRequest) {
         url.pathname = '/';
         return NextResponse.redirect(url);
     }
+    */
 
     return supabaseResponse;
 }

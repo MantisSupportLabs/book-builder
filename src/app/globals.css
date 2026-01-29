@@ -24,23 +24,23 @@
   --border: #262626;
   --input: #1a1a1a;
   --ring: #f97316;
-  
+
   /* Extended Palette */
   --amber-glow: rgba(249, 115, 22, 0.3);
   --cyan-glow: rgba(0, 255, 200, 0.3);
   --purple: #a855f7;
   --purple-glow: rgba(168, 85, 247, 0.3);
-  
+
   /* Status Colors */
   --success: #4ade80;
   --warning: #fb923c;
   --info: #38bdf8;
-  
+
   /* Typography */
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Space Mono', monospace;
   --font-serif: 'Crimson Pro', 'Georgia', serif;
-  
+
   /* Spacing */
   --radius: 0px;
 }
@@ -96,98 +96,125 @@ body {
    ============================ */
 
 @keyframes flip-in {
-  0% { 
-    transform: perspective(400px) rotateY(-90deg); 
-    opacity: 0; 
+  0% {
+    transform: perspective(400px) rotateY(-90deg);
+    opacity: 0;
   }
-  100% { 
-    transform: perspective(400px) rotateY(0deg); 
-    opacity: 1; 
+
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
   }
 }
 
 @keyframes slide-up-fade {
-  0% { 
-    opacity: 0; 
-    transform: translateY(8px); 
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
   }
-  100% { 
-    opacity: 1; 
-    transform: translateY(0); 
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes scale-in {
-  0% { 
-    transform: scale(0.85); 
-    opacity: 0; 
+  0% {
+    transform: scale(0.85);
+    opacity: 0;
   }
-  100% { 
-    transform: scale(1); 
-    opacity: 1; 
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
 @keyframes slide-in-right {
-  0% { 
-    transform: translateX(20px); 
-    opacity: 0; 
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
   }
-  100% { 
-    transform: translateX(0); 
-    opacity: 1; 
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes glitch {
-  0%, 100% { 
-    transform: translate(0); 
-    text-shadow: 0 0 0 var(--primary); 
+
+  0%,
+  100% {
+    transform: translate(0);
+    text-shadow: 0 0 0 var(--primary);
   }
-  20% { 
-    transform: translate(-2px, 1px); 
-    text-shadow: 2px 0 var(--accent), -2px 0 var(--primary); 
+
+  20% {
+    transform: translate(-2px, 1px);
+    text-shadow: 2px 0 var(--accent), -2px 0 var(--primary);
   }
-  40% { 
-    transform: translate(-1px, -1px); 
-    text-shadow: -2px 0 var(--accent), 2px 0 var(--primary); 
+
+  40% {
+    transform: translate(-1px, -1px);
+    text-shadow: -2px 0 var(--accent), 2px 0 var(--primary);
   }
-  60% { 
-    transform: translate(1px, 1px); 
-    text-shadow: 2px 0 var(--accent), -2px 0 var(--primary); 
+
+  60% {
+    transform: translate(1px, 1px);
+    text-shadow: 2px 0 var(--accent), -2px 0 var(--primary);
   }
-  80% { 
-    transform: translate(1px, -1px); 
-    text-shadow: -1px 0 var(--accent), 1px 0 var(--primary); 
+
+  80% {
+    transform: translate(1px, -1px);
+    text-shadow: -1px 0 var(--accent), 1px 0 var(--primary);
   }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { 
-    box-shadow: 0 0 5px var(--amber-glow); 
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px var(--amber-glow);
   }
-  50% { 
-    box-shadow: 0 0 20px var(--amber-glow), 0 0 30px var(--amber-glow); 
+
+  50% {
+    box-shadow: 0 0 20px var(--amber-glow), 0 0 30px var(--amber-glow);
   }
 }
 
 @keyframes shimmer {
-  0% { 
-    background-position: -200% 0; 
+  0% {
+    background-position: -200% 0;
   }
-  100% { 
-    background-position: 200% 0; 
+
+  100% {
+    background-position: 200% 0;
   }
 }
 
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes typewriter {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 .animate-flip-in {
@@ -217,12 +244,10 @@ body {
 }
 
 .animate-shimmer {
-  background: linear-gradient(
-    90deg, 
-    var(--secondary) 0%, 
-    var(--muted) 50%, 
-    var(--secondary) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--secondary) 0%,
+      var(--muted) 50%,
+      var(--secondary) 100%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }
@@ -447,12 +472,10 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--muted) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      var(--muted) 50%,
+      transparent 100%);
   animation: shimmer 1.5s infinite;
 }
 
@@ -499,6 +522,13 @@ body {
   font-size: 1.125rem;
   line-height: 1.8;
   color: var(--foreground);
+}
+
+/* Ensure spellcheck underlines are visible */
+.ProseMirror [spellcheck="true"],
+.ProseMirror {
+  -webkit-text-decoration-skip: none;
+  text-decoration-skip-ink: none;
 }
 
 .ProseMirror p {
@@ -658,13 +688,14 @@ body {
   .sidebar {
     width: 240px;
   }
-  
+
   .right-panel {
     width: 280px;
   }
 }
 
 @media (max-width: 768px) {
+
   .sidebar,
   .right-panel {
     display: none;
